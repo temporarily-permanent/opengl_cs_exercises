@@ -11,7 +11,7 @@ namespace GLColorDemo
     public class MainWindow : GameWindow
     {
         private MainDefaultShader shader;
-        private Plane plane;
+        private Traingle plane;
 
         public MainWindow(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
             : base(gameWindowSettings, nativeWindowSettings)
@@ -45,8 +45,18 @@ namespace GLColorDemo
 
         private void Render(double time)
         {
+            float[] translationMatrix = {
+                1, 0, 0, 0,   // kolom 1
+                0, 1, 0, 0,   // kolom 2
+                0, 0, 1, 0,   // kolom 3
+                2, 3, -5, 1   // kolom 4
+            };
+
             Matrix4 m = Matrix4.Identity;
-            shader.SetModelMatrix(m);
+           
+            //Matrix4.CreateTranslation(6.0f, 0.0f, 0.0f, out m);
+            shader.SetMatrix4("model", translationMatrix);
+            //shader.SetModelMatrix(m);
             plane.Renderer();
         }
 

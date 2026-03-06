@@ -9,17 +9,17 @@ namespace GLColorDemo
 
             vertices = new float[]
             {
-                0.5f,  0.5f, 0.0f,
-                0.5f, -0.5f, 0.0f,
+                 0.5f,  0.5f, 0.0f,
+                 0.5f, -0.5f, 0.0f,
                 -0.5f, -0.5f, 0.0f,
                 -0.5f,  0.5f, 0.0f,
             };
             colors = new float[]
             {
+               0,0,1,1,
+               0,1,0,1,
                1,0,0,1,
-               1,0,0,1,
-               1,0,0,1,
-               1,0,0,1,
+               0,1,0,1,
             };
             indices = new uint[]
             {
